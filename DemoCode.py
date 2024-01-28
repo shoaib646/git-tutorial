@@ -1,12 +1,15 @@
+def fibonacci_series(n):
+    fib_series = []
+    a, b = 0, 1
 
-# Star
-def create_star_pattern(rows):
-    for i in range(1, rows + 1):
-        for j in range(rows - i):
-            print(" ", end="")
-        for k in range(2 * i - 1):
-            print("*", end="")
-        print()
+    for _ in range(n):
+        fib_series.append(a)
+        a, b = b, a + b
+
+    return fib_series
 
 
-create_star_pattern(5)
+n = 10
+result = fibonacci_series(n)
+
+print(f"Fibonacci Series of length {n}: {result}")
